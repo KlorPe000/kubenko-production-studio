@@ -1,0 +1,474 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Wedding theme colors */
+  --wedding-cream: hsl(39, 33%, 97%);
+  --wedding-gold: hsl(45, 69%, 56%);
+  --wedding-champagne: hsl(40, 50%, 90%);
+  --wedding-beige: hsl(32, 33%, 87%);
+  --wedding-bronze: hsl(35, 35%, 61%);
+  --wedding-dark-bronze: hsl(35, 25%, 45%);
+  --wedding-charcoal: hsl(0, 0%, 17%);
+  --wedding-gray: hsl(0, 0%, 40%);
+}
+
+/* Date input styling */
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  color: transparent;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  pointer-events: none;
+}
+
+input[type="date"] {
+  color: #374151;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .wedding-cream {
+    color: var(--wedding-cream);
+  }
+  
+  .wedding-gold {
+    color: var(--wedding-gold);
+  }
+  
+  .wedding-champagne {
+    color: var(--wedding-champagne);
+  }
+  
+  .wedding-beige {
+    color: var(--wedding-beige);
+  }
+  
+  .wedding-bronze {
+    color: var(--wedding-bronze);
+  }
+  
+  .wedding-dark-bronze {
+    color: var(--wedding-dark-bronze);
+  }
+  
+  .wedding-charcoal {
+    color: var(--wedding-charcoal);
+  }
+  
+  .wedding-gray {
+    color: var(--wedding-gray);
+  }
+  
+  .bg-wedding-cream {
+    background-color: var(--wedding-cream);
+  }
+  
+  .bg-wedding-gold {
+    background-color: var(--wedding-gold);
+  }
+  
+  .bg-wedding-champagne {
+    background-color: var(--wedding-champagne);
+  }
+  
+  .bg-wedding-beige {
+    background-color: var(--wedding-beige);
+  }
+  
+  .bg-wedding-bronze {
+    background-color: var(--wedding-bronze);
+  }
+  
+  .bg-wedding-dark-bronze {
+    background-color: var(--wedding-dark-bronze);
+  }
+  
+  .bg-wedding-charcoal {
+    background-color: var(--wedding-charcoal);
+  }
+  
+  .bg-wedding-gray {
+    background-color: var(--wedding-gray);
+  }
+
+  .text-wedding-cream {
+    color: var(--wedding-cream);
+  }
+  
+  .text-wedding-gold {
+    color: var(--wedding-gold);
+  }
+  
+  .text-wedding-champagne {
+    color: var(--wedding-champagne);
+  }
+  
+  .text-wedding-beige {
+    color: var(--wedding-beige);
+  }
+  
+  .text-wedding-bronze {
+    color: var(--wedding-bronze);
+  }
+  
+  .text-wedding-dark-bronze {
+    color: var(--wedding-dark-bronze);
+  }
+  
+  .text-wedding-charcoal {
+    color: var(--wedding-charcoal);
+  }
+  
+  .text-wedding-gray {
+    color: var(--wedding-gray);
+  }
+
+  .border-wedding-cream {
+    border-color: var(--wedding-cream);
+  }
+  
+  .border-wedding-gold {
+    border-color: var(--wedding-gold);
+  }
+  
+  .border-wedding-champagne {
+    border-color: var(--wedding-champagne);
+  }
+  
+  .border-wedding-beige {
+    border-color: var(--wedding-beige);
+  }
+  
+  .border-wedding-bronze {
+    border-color: var(--wedding-bronze);
+  }
+  
+  .border-wedding-dark-bronze {
+    border-color: var(--wedding-dark-bronze);
+  }
+  
+  .border-wedding-charcoal {
+    border-color: var(--wedding-charcoal);
+  }
+  
+  .border-wedding-gray {
+    border-color: var(--wedding-gray);
+  }
+
+  .hover\:bg-wedding-cream:hover {
+    background-color: var(--wedding-cream);
+  }
+  
+  .hover\:bg-wedding-gold:hover {
+    background-color: var(--wedding-gold);
+  }
+  
+  .hover\:bg-wedding-champagne:hover {
+    background-color: var(--wedding-champagne);
+  }
+  
+  .hover\:bg-wedding-beige:hover {
+    background-color: var(--wedding-beige);
+  }
+  
+  .hover\:bg-wedding-bronze:hover {
+    background-color: var(--wedding-bronze);
+  }
+  
+  .hover\:bg-wedding-dark-bronze:hover {
+    background-color: var(--wedding-dark-bronze);
+  }
+  
+  .hover\:bg-wedding-charcoal:hover {
+    background-color: var(--wedding-charcoal);
+  }
+  
+  .hover\:bg-wedding-gray:hover {
+    background-color: var(--wedding-gray);
+  }
+
+  .hover\:text-wedding-cream:hover {
+    color: var(--wedding-cream);
+  }
+  
+  .hover\:text-wedding-gold:hover {
+    color: var(--wedding-gold);
+  }
+  
+  .hover\:text-wedding-champagne:hover {
+    color: var(--wedding-champagne);
+  }
+  
+  .hover\:text-wedding-beige:hover {
+    color: var(--wedding-beige);
+  }
+  
+  .hover\:text-wedding-bronze:hover {
+    color: var(--wedding-bronze);
+  }
+  
+  .hover\:text-wedding-dark-bronze:hover {
+    color: var(--wedding-dark-bronze);
+  }
+  
+  .hover\:text-wedding-charcoal:hover {
+    color: var(--wedding-charcoal);
+  }
+  
+  .hover\:text-wedding-gray:hover {
+    color: var(--wedding-gray);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, hsla(0, 0%, 0%, 0.7) 0%, hsla(0, 0%, 0%, 0.4) 50%, hsla(45, 69%, 56%, 0.2) 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--wedding-gold) 0%, var(--wedding-bronze) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .video-placeholder {
+    background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Professional Slide Animations */
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes parallaxSlide {
+    from {
+      opacity: 0;
+      transform: translateY(40px) translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) translateX(0);
+    }
+  }
+
+  .slide-in-left {
+    animation: slideInFromLeft 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .slide-in-right {
+    animation: slideInFromRight 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .slide-in-bottom {
+    animation: slideInFromBottom 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .slide-in-top {
+    animation: slideInFromTop 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .fade-in-scale {
+    animation: fadeInScale 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .parallax-slide {
+    animation: parallaxSlide 1.2s ease-out forwards;
+    opacity: 0;
+  }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-700 { animation-delay: 0.7s; }
+  .delay-800 { animation-delay: 0.8s; }
+
+  /* Hero background image styling */
+  .hero-background-desktop,
+  .hero-background-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: -1;
+  }
+
+  /* Desktop image positioning */
+  .hero-background-desktop {
+    object-position: center center;
+  }
+
+  /* Mobile image positioning */
+  .hero-background-mobile {
+    object-position: center 30%;
+  }
+
+  /* Fine-tune mobile positioning for different screen sizes */
+  @media (max-width: 480px) {
+    .hero-background-mobile {
+      object-position: center 25%;
+    }
+  }
+
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(34, 139, 34, 0.3) 100%);
+  }
+}
