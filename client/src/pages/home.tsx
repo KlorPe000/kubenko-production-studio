@@ -106,16 +106,15 @@ export default function Home() {
   // Package pricing structure
   const packagePrices = {
     "Комплексний пакет: Фото + Відео": {
-      base: 700,
+      base: 800,
       options: {
-        "Love Story - Відео": 150,
-        "Love Story - Фото": 150
+        "Love Story - Обрати": 300
       }
     },
     "Пакет: Двокамерна відеозйомка": {
-      base: 500,
+      base: 700,
       options: {
-        "Love Story - Відео": 150
+        "Love Story - Обрати": 300
       }
     }
   };
@@ -1353,88 +1352,40 @@ export default function Home() {
                               <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">Доповнення</span>
                             </div>
                             <p className="text-xs text-gray-600 mb-3">
-                              {selectedPackage === 'Комплексний пакет: Фото + Відео' 
-                                ? 'Можна обрати декілька варіантів (необов\'язково)' 
-                                : 'Оберіть варіант (необов\'язково)'}
+                              Оберіть варіант (необов'язково)
                             </p>
                             <div className="space-y-2">
-                              {selectedPackage === "Комплексний пакет: Фото + Відео" 
-                                ? ['Відео', 'Фото'].map((option) => {
-                                    const optionKey = `Love Story - ${option}`;
-                                    const isSelected = selectedOptions.includes(optionKey);
-                                    const packageData = packagePrices[selectedPackage as keyof typeof packagePrices];
-                                    const price = packageData?.options?.[optionKey as keyof typeof packageData.options];
-
-                                    return (
-                                      <div 
-                                        key={optionKey}
-                                        onClick={() => {
-                                          const newOptions = isSelected 
-                                            ? selectedOptions.filter(o => o !== optionKey)
-                                            : [...selectedOptions, optionKey];
-                                          setSelectedOptions(newOptions);
-                                        }}
-                                        className={`flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-all duration-300 ${
-                                          isSelected 
-                                            ? 'border-green-500 bg-green-100' 
-                                            : 'border-green-200 hover:bg-green-100'
-                                        }`}
-                                      >
-                                        <div className="flex items-center space-x-3">
-                                          <div className={`w-4 h-4 border-2 rounded transition-all duration-300 flex items-center justify-center ${
-                                            isSelected 
-                                              ? 'border-green-600 bg-green-600' 
-                                              : 'border-green-300'
-                                          }`}>
-                                            {isSelected && (
-                                              <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                              </svg>
-                                            )}
-                                          </div>
-                                          <span className="text-sm text-wedding-charcoal">{option}</span>
-                                        </div>
-                                        <span className={`text-sm font-semibold ${isSelected ? 'text-green-700' : 'text-green-600'}`}>
-                                          +${price}
-                                        </span>
-                                      </div>
-                                    );
-                                  })
-                                : (
-                                    // Single selection for Two-camera package (radio button behavior)
-                                    (<div 
-                                      onClick={() => {
-                                        const optionKey = 'Love Story - Відео';
-                                        const isSelected = selectedOptions.includes(optionKey);
-                                        const newOptions = isSelected 
-                                          ? selectedOptions.filter(opt => opt !== optionKey)
-                                          : [...selectedOptions.filter(opt => !opt.startsWith('Love Story -')), optionKey];
-                                        setSelectedOptions(newOptions);
-                                      }}
-                                      className={`flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-all duration-300 ${
-                                        selectedOptions.includes('Love Story - Відео')
-                                          ? 'border-green-500 bg-green-100' 
-                                          : 'border-green-200 hover:bg-green-100'
-                                      }`}
-                                    >
-                                      <div className="flex items-center space-x-3">
-                                        <div className={`w-4 h-4 border-2 rounded-full transition-all duration-300 flex items-center justify-center ${
-                                          selectedOptions.includes('Love Story - Відео')
-                                            ? 'border-green-600 bg-green-600' 
-                                            : 'border-green-300'
-                                        }`}>
-                                          {selectedOptions.includes('Love Story - Відео') && (
-                                            <div className="w-2 h-2 bg-white rounded-full"></div>
-                                          )}
-                                        </div>
-                                        <span className="text-sm text-wedding-charcoal">Відео</span>
-                                      </div>
-                                      <span className={`text-sm font-semibold ${selectedOptions.includes('Love Story - Відео') ? 'text-green-700' : 'text-green-600'}`}>
-                                        +${packagePrices[selectedPackage as keyof typeof packagePrices]?.options?.['Love Story - Відео']}
-                                      </span>
-                                    </div>)
-                                  )
-                              }
+                              <div 
+                                onClick={() => {
+                                  const optionKey = 'Love Story - Обрати';
+                                  const isSelected = selectedOptions.includes(optionKey);
+                                  const newOptions = isSelected 
+                                    ? selectedOptions.filter(opt => opt !== optionKey)
+                                    : [...selectedOptions.filter(opt => !opt.startsWith('Love Story -')), optionKey];
+                                  setSelectedOptions(newOptions);
+                                }}
+                                className={`flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-all duration-300 ${
+                                  selectedOptions.includes('Love Story - Обрати')
+                                    ? 'border-green-500 bg-green-100' 
+                                    : 'border-green-200 hover:bg-green-100'
+                                }`}
+                              >
+                                <div className="flex items-center space-x-3">
+                                  <div className={`w-4 h-4 border-2 rounded-full transition-all duration-300 flex items-center justify-center ${
+                                    selectedOptions.includes('Love Story - Обрати')
+                                      ? 'border-green-600 bg-green-600' 
+                                      : 'border-green-300'
+                                  }`}>
+                                    {selectedOptions.includes('Love Story - Обрати') && (
+                                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                                    )}
+                                  </div>
+                                  <span className="text-sm text-wedding-charcoal">Обрати</span>
+                                </div>
+                                <span className={`text-sm font-semibold ${selectedOptions.includes('Love Story - Обрати') ? 'text-green-700' : 'text-green-600'}`}>
+                                  +$300
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
